@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles that work with both MUI and Tailwind */
+@layer components {
+  .form-container {
+    @apply max-w-4xl mx-auto p-6;
+  }
+  
+  .form-section {
+    @apply space-y-4;
+  }
+  
+  .result-container {
+    @apply mt-8 p-6 rounded-lg shadow-md;
+  }
+} 
