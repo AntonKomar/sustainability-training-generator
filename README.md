@@ -1,0 +1,1 @@
+# sustainability-training-generator
