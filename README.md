@@ -9,7 +9,7 @@ This application was built as a minimal viable product (MVP) to demonstrate the 
 To ensure quality AI output, the implementation includes:
 - Structured prompt engineering with clear sections and requirements
 - Industry-specific context incorporation
-- Consistent output format with predefined sections
+- Consistent output format
 - Error handling and validation
 
 ## Setup
@@ -26,16 +26,16 @@ To ensure quality AI output, the implementation includes:
    npm install
    ```
 
-3. Create `.env` files in both client and server directories
+3. Provide Gemini AI secret key in `.env` file in server directory
 4. Start the application:
    ```bash
    # Backend
    cd server
-   npm run dev
+   docker compose up
 
    # Frontend
    cd client
-   npm start
+   npm run dev
    ```
 
 ## Technologies Used
