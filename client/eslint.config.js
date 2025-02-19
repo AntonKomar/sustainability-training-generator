@@ -1,10 +1,11 @@
-import tseslint from 'typescript-eslint';
 import eslintConfigPrettier from 'eslint-config-prettier';
-import reactPlugin from 'eslint-plugin-react';
-import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import importPlugin from 'eslint-plugin-import';
 import jsxA11yPlugin from 'eslint-plugin-jsx-a11y';
 import prettierPlugin from 'eslint-plugin-prettier';
+import reactPlugin from 'eslint-plugin-react';
+import reactHooksPlugin from 'eslint-plugin-react-hooks';
+import unusedImports from 'eslint-plugin-unused-imports';
+import tseslint from 'typescript-eslint';
 
 export default tseslint.config({
   files: ['**/*.{ts,tsx}'],
@@ -30,6 +31,7 @@ export default tseslint.config({
     import: importPlugin,
     'jsx-a11y': jsxA11yPlugin,
     prettier: prettierPlugin,
+    'unused-imports': unusedImports,
   },
   settings: {
     react: {
@@ -46,6 +48,17 @@ export default tseslint.config({
     'prettier/prettier': 'error',
     'react/react-in-jsx-scope': 'off',
     'react/jsx-uses-react': 'off',
+    '@typescript-eslint/no-unused-vars': 'off', // Turn off TypeScript's built-in unused vars rule
+    'unused-imports/no-unused-imports': 'error',
+    'unused-imports/no-unused-vars': [
+      'warn',
+      {
+        vars: 'all',
+        varsIgnorePattern: '^_',
+        args: 'after-used',
+        argsIgnorePattern: '^_',
+      },
+    ],
   },
   extends: [eslintConfigPrettier],
 });

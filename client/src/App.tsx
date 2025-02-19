@@ -1,18 +1,7 @@
-import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
+import { CssBaseline, ThemeProvider } from '@mui/material';
 import TrainingForm from './components/TrainingForm';
-// import './App.css';
-
-const theme = createTheme({
-  palette: {
-    mode: 'light',
-    primary: {
-      main: '#2196f3',
-    },
-    secondary: {
-      main: '#f50057',
-    },
-  },
-});
+import { theme } from './configs/themeConfig';
+import './index.css';
 
 function App() {
   return (
